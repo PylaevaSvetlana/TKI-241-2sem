@@ -8,14 +8,14 @@ int main()
 	std::setlocale(LC_ALL, "RU");
 
 	std::vector<double> vector;
-	std::cout << "Ââåäèòå ÷èñëà" << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð°" << std::endl;
 	std::istream_iterator<double> begin(std::cin);
 	std::istream_iterator<double> end;
 	copy(begin, end, back_inserter(vector));
 
 	if (vector.size() < 2)
 	{
-		std::cout << "Ââåäåíî ìåíüøå äâóõ ÷èñåë" << std::endl;
+		std::cout << "Ð’Ð²ÐµÐ´ÐµÐ½Ð¾ Ð¼ÐµÐ½ÑŒÑˆÐµ Ð´Ð²ÑƒÑ… Ñ‡Ð¸ÑÐµÐ»" << std::endl;
 		return 1;
 	}
 
@@ -23,7 +23,7 @@ int main()
 	int index = 0;
 	std::remove_copy_if(vector.begin(), vector.end(), back_inserter(ChetVector), [&index](double) { return (index++ % 2) == 0; });
 
-	std::cout << "×¸òíûå" << std::endl;
+	std::cout << "Ð§Ñ‘Ñ‚Ð½Ñ‹Ðµ" << std::endl;
 	std::ostream_iterator<double> out(std::cout, " ");
 	copy(ChetVector.begin(), ChetVector.end(), out);
 
